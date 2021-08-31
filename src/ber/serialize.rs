@@ -45,7 +45,7 @@ pub fn ber_encode_header<'a, 'b: 'a, W: Write + 'a>(
         // identifier octets (X.690 8.1.2)
         let class_u8 = (hdr.class as u8) << 6;
         let pc_u8 = (hdr.structured & 1) << 5;
-        if hdr.tag.0 >= 30 {
+        if hdr.tag.0 > 30 {
             unimplemented!();
         }
         let byte_0 = class_u8 | pc_u8 | (hdr.tag.0 as u8);
