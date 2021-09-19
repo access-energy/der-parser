@@ -5,7 +5,7 @@
 //! [![Download numbers](https://img.shields.io/crates/d/der-parser.svg)](https://crates.io/crates/der-parser)
 //! [![dependency status](https://deps.rs/crate/der-parser/5.0.0/status.svg)](https://deps.rs/crate/der-parser/5.0.1)
 //! [![Github CI](https://github.com/rusticata/der-parser/workflows/Continuous%20integration/badge.svg)](https://github.com/rusticata/der-parser/actions)
-//! [![Minimum rustc version](https://img.shields.io/badge/rustc-1.44.0+-lightgray.svg)](#rust-version-requirements)
+//! [![Minimum rustc version](https://img.shields.io/badge/rustc-1.48.0+-lightgray.svg)](#rust-version-requirements)
 //!
 //! # BER/DER Parser
 //!
@@ -196,7 +196,7 @@
 //!
 //! ## Rust version requirements
 //!
-//! The 5.0 series of `der-parser` requires **Rustc version 1.44 or greater**, based on nom 6
+//! The 6.0 series of `der-parser` requires **Rustc version 1.48 or greater**, based on nom 7
 //! dependencies.
 //!
 //! # Serialization
@@ -245,9 +245,6 @@ extern crate std;
 
 extern crate alloc;
 
-#[macro_use]
-mod macros;
-
 #[allow(clippy::module_inception)]
 pub mod ber;
 pub mod der;
@@ -266,7 +263,7 @@ pub use num_bigint;
 // re-exports nom macros, so this crate's macros can be used without importing nom
 pub use nom::IResult;
 #[doc(hidden)]
-pub use rusticata_macros::{custom_check, flat_take};
+pub use rusticata_macros::custom_check;
 
 #[doc(hidden)]
 pub mod exports {
